@@ -1,0 +1,176 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+* {
+	font-family: 'Roboto', sans-serif;
+	margin: 0px;
+outline: none;
+}
+.heading {
+	width: 100%;
+	-webkit-box-shadow: 0 4px 6px -6px #222;
+  -moz-box-shadow: 0 4px 6px -6px #222;
+  box-shadow: 0 4px 6px -6px #222;
+	background-color: #07399A;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 20px;
+	color: white;
+	margin-bottom: 50px;
+	
+}
+#dialogoverlay2{
+	display: block;
+	opacity: .8;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background: #FFF;
+	width: 100%;
+	z-index: 10;
+	height: 100%;
+}
+#dialogbox2{
+	position: fixed;
+	background: #07399A;
+	border-radius:7px; 
+	width: 1200px;
+	z-index: 10;
+	border: 5px solid #737D8E;
+	right: 0;
+	left: 0;
+    margin-right: auto;
+    margin-left: auto;
+	padding: 10px;
+	display: inline-block;
+	
+}
+#dialogboxbody2 {
+	display: inline-block;
+	color: white;
+/*text-align:left;*/
+   -webkit-box-shadow: 0 4px 6px -6px #222;
+  -moz-box-shadow: 0 4px 6px -6px #222;
+  box-shadow: 0 4px 6px -6px #222;
+}
+#dialogboxbody2 video {
+	width: 75%;
+	height: auto;
+}
+#dialogoverlay{
+	display: none;
+	opacity: .8;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background: #FFF;
+	width: 100%;
+	z-index: 10;
+}
+#dialogbox{
+	display: none;
+	position: fixed;
+	background: #07399A;
+	border-radius:7px; 
+	width:550px;
+	z-index: 10;
+	border: 5px solid #737D8E;
+}
+#dialogboxhead img {
+	width: 15%;
+}
+#dialogboxhead {
+	background-color: white;
+	padding:10px;
+	padding-bottom: 0px;
+text-align:center;
+	
+	 -webkit-box-shadow: 0 4px 6px -6px #222;
+  -moz-box-shadow: 0 4px 6px -6px #222;
+  box-shadow: 0 4px 6px -6px #222;
+}
+#dialogboxfoot {
+	background-color: white;
+	padding:10px;
+text-align:right;
+   -webkit-box-shadow: 0 4px 6px -6px #222;
+  -moz-box-shadow: 0 4px 6px -6px #222;
+  box-shadow: 0 4px 6px -6px #222;
+}
+#dialogboxbody {
+	color: white;
+	padding:20px;
+text-align:left;
+   -webkit-box-shadow: 0 4px 6px -6px #222;
+  -moz-box-shadow: 0 4px 6px -6px #222;
+  box-shadow: 0 4px 6px -6px #222;
+}
+.alertokbtn button, .alertokbtn input[type=submit]{
+    background: white;
+    padding: 4px 15px 4px 15px;
+    border: none;
+    color: #07399A;
+	border: 2px solid #07399A;
+   cursor: pointer;
+	font-size: 15px;
+   }
+
+.alertokbtn button:hover, .alertokbtn input[type=submit]:hover {
+    background: #07399A;
+    padding: 4px 15px 4px 15px;
+    border: none;
+    color: white;
+	border: 2px solid #07399A;
+   cursor: pointer;
+   }
+.closebtn {
+	
+	text-decoration: none;
+	color: white;
+	padding-bottom: 5px;
+	margin-bottom: 10px;
+	font-size: 21px;
+    text-align: left;
+}
+.closebtn span{
+	text-decoration: none;
+	color: white;
+	vertical-align: middle;
+	background-color: red;
+	padding: 2px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 4px 6px -6px #222;
+  -moz-box-shadow: 0 4px 6px -6px #222;
+  box-shadow: 0 4px 6px -6px #222;
+}
+.btn, input[type=submit]{
+	background-color: #07399A;
+	color: white;
+	padding: 10px;
+	font-size: 30px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 4px 6px -6px #222;
+  -moz-box-shadow: 0 4px 6px -6px #222;
+  box-shadow: 0 4px 6px -6px #222;
+	text-decoration: none;
+	margin-right: auto;
+    margin-left: auto;
+	border: none;
+	margin-top: 30px;
+}
+input[type=submit]:hover {
+	cursor: pointer;
+}
+#timer_div {
+	margin-right: auto;
+    margin-left: auto;
+}
+.timer {
+	color: #CBC7C7;
+	font-size: 15px;
+	bottom: 5px;
+	position: fixed;
+	text-align: center;
+	width: 100%;
+}
