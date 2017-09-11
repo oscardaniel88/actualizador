@@ -21,21 +21,24 @@ while(true || $asd==15)
 	if (time("H") == 0) {
 		echo "<script>console.log( 'hi' );</script>";
 	}
-    
+
 }*/
 include 'config.php';
 $sqlcheckifnew = "SELECT * FROM properties";
 $resultcheckifnew = mysqli_query($db, $sqlcheckifnew);
 if (mysqli_num_rows($resultcheckifnew) == 0) {
 	$localIP = getHostByName(getHostName());
-	echo $localIP;
+	//echo $localIP;
+  $url = 'https://frank.fabregat.com.mx/cevideo/checkip.php?ip=' . $localIP;
+  echo $url;
 	$json = file_get_contents('https://frank.fabregat.com.mx/cevideo/checkip.php?ip=' . $localIP);
 	$obj = json_decode($json);
 	$code = $obj->{'code'};
 	if ($code == "ERROR") {
-		echo "ERROR " + $localIP;
+		echo "<br>ERROR: No existe hotel con IP '" . $localIP . "'";
 	} else {
 		//echo strtoupper($code);
+
 		include 'config.php';
 		$sqlupdate = "INSERT INTO `properties` (`code`) VALUES ('$code')";
 		$resultupdate = mysqli_query($db, $sqlupdate);
@@ -45,8 +48,8 @@ if (mysqli_num_rows($resultcheckifnew) == 0) {
 	//echo "not new";
 	$row = mysqli_fetch_assoc($resultcheckifnew);
 	//echo strtoupper($row['code']);
-	
-	
+
+
 	function updateVideo($code9, $version9, $output) {
 		$jsonu = file_get_contents('https://frank.fabregat.com.mx/cevideo/checkip.php?code='.$code9.'&version=' . $version9);
 	$obju = json_decode($jsonu);
@@ -80,7 +83,7 @@ echo "<script>Alert.render('Se ha actualizado el video.','');</script>";
 		//echo "dsa";
 	}
 	}
-	
+
 	updateVideo($row['code'], $row['version'], false);
 	if (isset($_POST['update'])) {
 		updateVideo($row['code'], $row['version'], true);
@@ -104,11 +107,14 @@ echo "<script>Alert.render('Se ha actualizado el video.','');</script>";
 		//echo "dsa";
 	}*/
 	}
+  $localIP = getHostByName(getHostName());
+  $url = 'https://frank.fabregat.com.mx/cevideo/checkip.php?ip=' . $localIP;
+  echo $url;
 	?>
 <center><div class="heading"><a><?php echo strtoupper($row['code']); ?></a></div></center>
 <center><a class="btn" href="index.php?showvideo=true">Ver Video</a></center>
 <center><form action="" method="post"><input type="submit" value="Actualizar Video" name="update"></form></center>
-<?php 
+<?php
 if ($_GET['showvideo'] == "true") {
 ?>
 <center>
