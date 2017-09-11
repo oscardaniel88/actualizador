@@ -33,7 +33,7 @@ if (mysqli_num_rows($resultcheckifnew) == 0) {
 	$obj = json_decode($json);
 	$code = $obj->{'code'};
 	if ($code == "ERROR") {
-		echo "ERROR";
+		echo "ERROR " + getHostByName(getHostName());
 	} else {
 		//echo strtoupper($code);
 		include 'config.php';
