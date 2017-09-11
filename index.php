@@ -28,12 +28,12 @@ $sqlcheckifnew = "SELECT * FROM properties";
 $resultcheckifnew = mysqli_query($db, $sqlcheckifnew);
 if (mysqli_num_rows($resultcheckifnew) == 0) {
 	$localIP = getHostByName(getHostName());
-	//echo $localIP;
+	echo $localIP;
 	$json = file_get_contents('https://frank.fabregat.com.mx/cevideo/checkip.php?ip=' . $localIP);
 	$obj = json_decode($json);
 	$code = $obj->{'code'};
 	if ($code == "ERROR") {
-		echo "ERROR " + getHostByName(getHostName());
+		echo "ERROR " + $localIP;
 	} else {
 		//echo strtoupper($code);
 		include 'config.php';
