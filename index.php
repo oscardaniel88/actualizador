@@ -29,6 +29,7 @@ if ($db) {
 } else {
   echo "No se conecto a la base de datos";
 }
+
 $sqlcheckifnew = "SELECT * FROM properties";
 $resultcheckifnew = mysqli_query($db, $sqlcheckifnew);
 if (mysqli_num_rows($resultcheckifnew) == 0) {
