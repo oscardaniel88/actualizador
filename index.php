@@ -24,6 +24,11 @@ while(true || $asd==15)
 
 }*/
 include 'config.php';
+if ($db) {
+  echo "Se conecto a la base de datos";
+} else {
+  echo "No se conecto a la base de datos";
+}
 $sqlcheckifnew = "SELECT * FROM properties";
 $resultcheckifnew = mysqli_query($db, $sqlcheckifnew);
 if (mysqli_num_rows($resultcheckifnew) == 0) {
