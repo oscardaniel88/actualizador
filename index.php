@@ -41,8 +41,11 @@ if (mysqli_num_rows($resultcheckifnew) == 0) {
 
 		include 'config.php';
 		$sqlupdate = "INSERT INTO `properties` (`code`) VALUES ('$code')";
-		$resultupdate = mysqli_query($db, $sqlupdate);
-		?><meta http-equiv="refresh" content="0"><?php
+		if (mysqli_query($db, $sqlupdate)) {
+      ?><meta http-equiv="refresh" content="0"><?php
+    } else {
+      echo "No se ha podido modificar la base de datos";
+    }
 	}
 } else {
 	//echo "not new";
@@ -107,9 +110,9 @@ echo "<script>Alert.render('Se ha actualizado el video.','');</script>";
 		//echo "dsa";
 	}*/
 	}
-  $localIP = getHostByName(getHostName());
+  /*$localIP = getHostByName(getHostName());
   $url = 'https://frank.fabregat.com.mx/cevideo/checkip.php?ip=' . $localIP;
-  echo $url;
+  echo $url;*/
 	?>
 <center><div class="heading"><a><?php echo strtoupper($row['code']); ?></a></div></center>
 <center><a class="btn" href="index.php?showvideo=true">Ver Video</a></center>
