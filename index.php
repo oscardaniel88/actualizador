@@ -24,11 +24,11 @@ while(true || $asd==15)
 
 }*/
 include 'config.php';
-if ($db) {
+/*if ($db) {
   echo "Se conecto a la base de datos";
 } else {
   echo "No se conecto a la base de datos";
-}
+}*/
 
 $sqlcheckifnew = "SELECT * FROM properties";
 $resultcheckifnew = mysqli_query($db, $sqlcheckifnew);
@@ -36,7 +36,7 @@ if (mysqli_num_rows($resultcheckifnew) == 0) {
 	$localIP = getHostByName(getHostName());
 	//echo $localIP;
   $url = 'https://frank.fabregat.com.mx/cevideo/checkip.php?ip=' . $localIP;
-  echo $url;
+  //echo $url;
 	$json = file_get_contents('https://frank.fabregat.com.mx/cevideo/checkip.php?ip=' . $localIP);
 	$obj = json_decode($json);
 	$code = $obj->{'code'};
@@ -46,7 +46,7 @@ if (mysqli_num_rows($resultcheckifnew) == 0) {
 		//echo strtoupper($code);
 
 		include 'config.php';
-		$sqlupdate = "INSERT INTO `properties` (`code`) VALUES ('$code')";
+		$sqlupdate = "INSERT INTO `properties` (`code`, `version`) VALUES ('$code', '1')";
 		if (mysqli_query($db, $sqlupdate)) {
       ?><meta http-equiv="refresh" content="0"><?php
     } else {
