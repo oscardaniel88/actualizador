@@ -170,7 +170,7 @@ if ($_GET['showvideo'] == "true") {
 <?php
     }
     date_default_timezone_set('America/Mexico_City'); ?>
-<div class="timer"><center><div id="timer_div"></div><a>Actualizado el <?php echo date('j'); ?>/<?php echo date('n'); ?>/<?php echo date('Y'); ?> a las <?php echo date('g'); ?>:<?php echo date('i'); ?>:<?php echo date('s'); ?><?php echo date('a'); ?></a></center></div>
+<div class="timer"><center><div id="timer_div"></div><a>Actualizado el <?php echo date('j'); ?>/<?php echo date('n'); ?>/<?php echo date('Y'); ?> a las <?php echo date('g'); ?>:<?php echo date('i'); ?>:<?php echo date('s'); ?><?php echo date('a'); ?><br>@<?php echo date('Y'); ?> Francisco Fabregat G.</a></center></div>
 <script>
 	//var seconds_left = 30;
 	var seconds_left = 1800;
