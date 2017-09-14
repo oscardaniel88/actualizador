@@ -65,7 +65,7 @@ if (mysqli_num_rows($resultcheckifnew) == 0) {
         $obju = json_decode($jsonu);
         $update = $obju->{'update'};
         $newversion = $obju->{'version'};
-        if ($update == "yes" || !file_exists(video/video.mp4)) {
+        if ($update == "yes" || !file_exists('video/video.mp4')) {
             /*$source = "https://frank.fabregat.com.mx/cevideo/videos/".$row['code']."/video.mp4";
 $dest = "video/video.mp4";
 if (copy($source, $dest)) {
