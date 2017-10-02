@@ -155,7 +155,7 @@ echo "<script>Alert.render('Se ha actualizado el video.','');</script>";
 <center><a class="btn" href="index.php?showvideo=true">Ver Video</a></center>
 <center><form action="" method="post"><input type="submit" value="Actualizar Video" name="update"></form></center>
 <?php
-if ($_GET['showvideo'] == "true") {
+if(isset($_GET['showvideo']) && $_GET['showvideo'] == "true") {
         ?>
 <center>
 <div id="dialogoverlay2"></div>
