@@ -33,11 +33,11 @@ include 'config.php';
 $sqlcheckifnew = "SELECT * FROM properties";
 $resultcheckifnew = mysqli_query($db, $sqlcheckifnew);
 if (mysqli_num_rows($resultcheckifnew) == 0) {
-    $localIP = getHostByName(getHostName());
+    $localIP = exec("ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'");
     //echo $localIP;
-    $url = 'https://frank.fabregat.com.mx/cevideo/checkip.php?ip=' . $localIP;
+    $url = 'http://54.183.167.135/cevideo/checkip.php?ip=' . $localIP;
     //echo $url;
-    $json = file_get_contents('https://frank.fabregat.com.mx/cevideo/checkip.php?ip=' . $localIP);
+    $json = file_get_contents('http://54.183.167.135/cevideo/checkip.php?ip=' . $localIP);
     $obj = json_decode($json);
     $code = $obj->{'code'};
     if ($code == "ERROR") {
@@ -61,7 +61,7 @@ if (mysqli_num_rows($resultcheckifnew) == 0) {
 
     function updateVideo($code9, $version9, $output)
     {
-        $jsonu = file_get_contents('https://frank.fabregat.com.mx/cevideo/checkip.php?code='.$code9.'&version=' . $version9);
+        $jsonu = file_get_contents('http://54.183.167.135/cevideo/checkip.php?code='.$code9.'&version=' . $version9);
         $obju = json_decode($jsonu);
         $update = $obju->{'update'};
         $newversion = $obju->{'version'};
@@ -84,7 +84,7 @@ echo "<script>Alert.render('Se ha actualizado el video.','');</script>";
                 echo "<script>console.log('No se ha podido actualizar el video.');</script>";
             }
 }*/
-            $source = "https://frank.fabregat.com.mx/cevideo/videos/".$code9."/video.mp4";
+            $source = "http://54.183.167.135/cevideo/videos/".$code9."/video.mp4";
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $source);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
